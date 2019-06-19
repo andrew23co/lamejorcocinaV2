@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Prueba</title>
+    </h:head>
+    <h:body>
+        <h:dataTable value="#{clienteTest.lista()}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.ListClienteTitle_idCliente}"/>
+                </f:facet>
+                <h:outputText value="#{item.idCliente}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.ListClienteTitle_nombre}"/>
+                </f:facet>
+                <h:outputText value="#{item.nombre}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.ListClienteTitle_apellido1}"/>
+                </f:facet>
+                <h:outputText value="#{item.apellido1}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.ListClienteTitle_apellido2}"/>
+                </f:facet>
+                <h:outputText value="#{item.apellido2}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.ListClienteTitle_observaciones}"/>
+                </f:facet>
+                <h:outputText value="#{item.observaciones}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="&nbsp;"/>
+                </f:facet>
+                <h:commandLink action="#{clienteController.prepareView}" value="#{bundle.ListClienteViewLink}"/>
+                <h:outputText value=" "/>
+                <h:commandLink action="#{clienteController.prepareEdit}" value="#{bundle.ListClienteEditLink}"/>
+                <h:outputText value=" "/>
+                <h:commandLink action="#{clienteController.destroy}" value="#{bundle.ListClienteDestroyLink}"/>
+            </h:column>
+        </h:dataTable>
+        Hello from Facelets
+    </h:body>
+</html>
+
