@@ -30,6 +30,9 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c"),
+    @NamedQuery(name = "Cliente.findAllXMonto", query = "SELECT c FROM Cliente c JOIN Factura f JOIN Detallefactura d "
+            + "GROUP BY c.idCliente, c.nombre, c.apellido1, c.apellido2, c.observaciones "
+            + "HAVING  SUM(d.importe) > 100000"),
     @NamedQuery(name = "Cliente.findByIdCliente", query = "SELECT c FROM Cliente c WHERE c.idCliente = :idCliente"),
     @NamedQuery(name = "Cliente.findByNombre", query = "SELECT c FROM Cliente c WHERE c.nombre = :nombre"),
     @NamedQuery(name = "Cliente.findByApellido1", query = "SELECT c FROM Cliente c WHERE c.apellido1 = :apellido1"),

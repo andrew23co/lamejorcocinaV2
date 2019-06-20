@@ -4,33 +4,42 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <title>Restaurante la Mejor Cocina</title>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputScript library="js" name="bootstrap.min.js" /> 
+        <h:outputScript library="js" name="jquery.min.js" />   
     </h:head>
     <h:body>
-        <h:dataTable var="P" value="">
-            <h:column>
-                <f:facet name="header">Nombre</f:facet>
-                <h:outputText value=""></h:outputText>
-            </h:column>
-        </h:dataTable>
-        <br />
-        <h:link outcome="/camarero/List" value="Show All Camarero Items"/>
-        <br />
-        <h:link outcome="/cliente/List" value="Show All Cliente Items"/>
-        <br />
-        <h:link outcome="/cocinero/List" value="Show All Cocinero Items"/>
-        <br />
-        <h:link outcome="/detallefactura/List" value="Show All Detallefactura Items"/>
-        <br />
-        <h:link outcome="/factura/List" value="Show All Factura Items"/>
-        <br />
-        <h:link outcome="/mesa/List" value="Show All Mesa Items"/>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#">La Mejor Cocina</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"> <h:link outcome="/index" value="Home"/></li>
+                        <li class="dropdown">
+                            <li><h:link outcome="/camarero/List" value="Camareros"/></li>
+                            <li><h:link outcome="/cliente/List" value="Clientes"/></li>
+                            <li><h:link outcome="/cocinero/List" value="Cocineros"/></li>  
+                            <li><h:link outcome="/mesa/List" value="Mesas"/></li>
+                            <li><h:link outcome="/factura/List" value="Facturas"/></li>      
+                            <li><h:link outcome="/reportes/ClientesxMonto" value="Superior a 100.000"/></li>
+                            <li><h:link outcome="/camarero/List" value="Total por camarero"/></li>
+                        </li>                       
+                    </ul>               
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1>Restaurante La Mejor Cocina</h1>
+            <p>Menu y variedad para todos.</p>
+        </div>    
     </h:body>
-
-
-
-
-
-
 </html>

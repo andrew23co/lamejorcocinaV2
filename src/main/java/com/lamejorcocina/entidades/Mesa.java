@@ -47,7 +47,7 @@ public class Mesa implements Serializable {
     private int numMaxComensales;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 10)
+    @Size(min = 1, max = 100)
     @Column(name = "Ubicacion")
     private String ubicacion;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idMesa")

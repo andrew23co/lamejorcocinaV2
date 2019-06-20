@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateDetallefacturaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateDetallefacturaLabel_idDetalleFactura}" for="idDetalleFactura" />
+                    <h:inputText id="idDetalleFactura" value="#{detallefacturaController.selected.idDetalleFactura}" title="#{bundle.CreateDetallefacturaTitle_idDetalleFactura}" required="true" requiredMessage="#{bundle.CreateDetallefacturaRequiredMessage_idDetalleFactura}"/>
+                    <h:outputLabel value="#{bundle.CreateDetallefacturaLabel_plato}" for="plato" />
+                    <h:inputText id="plato" value="#{detallefacturaController.selected.plato}" title="#{bundle.CreateDetallefacturaTitle_plato}" required="true" requiredMessage="#{bundle.CreateDetallefacturaRequiredMessage_plato}"/>
+                    <h:outputLabel value="#{bundle.CreateDetallefacturaLabel_importe}" for="importe" />
+                    <h:inputText id="importe" value="#{detallefacturaController.selected.importe}" title="#{bundle.CreateDetallefacturaTitle_importe}" required="true" requiredMessage="#{bundle.CreateDetallefacturaRequiredMessage_importe}"/>
+                    <h:outputLabel value="#{bundle.CreateDetallefacturaLabel_idFactura}" for="idFactura" />
+                    <h:selectOneMenu id="idFactura" value="#{detallefacturaController.selected.idFactura}" title="#{bundle.CreateDetallefacturaTitle_idFactura}" required="true" requiredMessage="#{bundle.CreateDetallefacturaRequiredMessage_idFactura}">
+                        <f:selectItems value="#{facturaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateDetallefacturaLabel_idCocinero}" for="idCocinero" />
+                    <h:selectOneMenu id="idCocinero" value="#{detallefacturaController.selected.idCocinero}" title="#{bundle.CreateDetallefacturaTitle_idCocinero}" required="true" requiredMessage="#{bundle.CreateDetallefacturaRequiredMessage_idCocinero}">
+                        <f:selectItems value="#{cocineroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{detallefacturaController.create}" value="#{bundle.CreateDetallefacturaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{detallefacturaController.prepareList}" value="#{bundle.CreateDetallefacturaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateDetallefacturaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
