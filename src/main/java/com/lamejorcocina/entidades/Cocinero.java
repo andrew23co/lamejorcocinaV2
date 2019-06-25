@@ -137,7 +137,7 @@ public class Cocinero implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lamejorcocina.entidades.Cocinero[ idCocinero=" + idCocinero + " ]";
+        return idCocinero + " "+nombre+" "+apellido1;
     }
     
 }

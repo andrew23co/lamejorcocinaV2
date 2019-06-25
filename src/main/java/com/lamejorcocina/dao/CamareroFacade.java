@@ -27,6 +27,5 @@ public class CamareroFacade extends AbstractFacade<Camarero> {
 
     public CamareroFacade() {
         super(Camarero.class);
-    }
-    
+    }   
 }

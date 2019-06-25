@@ -5,8 +5,11 @@
  */
 package com.lamejorcocina.test;
 
+import com.lamejorcocina.controller.ClienteController;
 import com.lamejorcocina.entidades.Cliente;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,20 +18,24 @@ import javax.persistence.Persistence;
  *
  * @author Andres Gamba
  */
-public class ClienteTest {
-
-    private static EntityManager em;
-    private static EntityManagerFactory emf;
+public class ClienteTest{
+    
+    private static ClienteController cc;
 
     public static void main(String[] args) {
         
-        emf =  Persistence.createEntityManagerFactory("lamejorcocina");
-        em = emf.createEntityManager();        
+               cc = new ClienteController();
         
-        List<Cliente> cs = (List<Cliente>) em.createQuery("SELECT c FROM Cliente c").getResultList();
+        List<Cliente> cs = (List<Cliente>) cc.getItems();
         
         for (Cliente c: cs){
-            System.out.println("Nombre "+c.getNombre());
+   
+                   try {
+                       Class.forName("asd");
+                   } catch (ClassNotFoundException ex) {
+                       Logger.getLogger(ClienteTest.class.getName()).log(Level.SEVERE, null, ex);
+                   }
+           
         }
     }
 }

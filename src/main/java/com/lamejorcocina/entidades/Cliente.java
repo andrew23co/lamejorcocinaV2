@@ -152,7 +152,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lamejorcocina.entidades.Cliente[ idCliente=" + idCliente + " ]";
+        return idCliente + " "+nombre+" "+apellido1;
     }
     
 }

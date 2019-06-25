@@ -144,7 +144,7 @@ public class Factura implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lamejorcocina.entidades.Factura[ idFactura=" + idFactura + " ]";
+       return idFactura + " "+this.fechaFactura+" Cli: "+idCliente;
     }
     
 }

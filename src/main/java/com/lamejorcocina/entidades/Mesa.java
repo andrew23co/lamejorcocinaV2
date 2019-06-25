@@ -121,7 +121,7 @@ public class Mesa implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lamejorcocina.entidades.Mesa[ idMesa=" + idMesa + " ]";
+        return idMesa + "-"+this.ubicacion+"-"+numMaxComensales;
     }
     
 }
